@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.animation:hover {
+    animation-name: bob-float, bob;
+    animation-duration: 0.3s, 1.5s;
+    animation-delay: 0s, 0.3s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+#canvas-container {
+    height: 60vh !important;
+    width: 60vw !important;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    #canvas-container {
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+@keyframes bob-float {
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes bob {
+    0% {
+        transform: translateY(-8px);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
